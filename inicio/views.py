@@ -1,5 +1,4 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Service, Incidence
 from django.views.generic import ListView, DetailView
 
@@ -8,7 +7,7 @@ from django.views.generic import ListView, DetailView
 
 class ServicesListView(ListView):
     model = Service 
-    template_name = "index.html"
+    template_name = "service.html"
     
      
 class ServiceDetailView(DetailView):
@@ -18,7 +17,7 @@ class ServiceDetailView(DetailView):
     
 class IncidenceListView(ListView):
     model = Incidence
-    template_name = "index.html"
+    template_name = "incidence.html"
     
 
 class IncidenceDetailView(DetailView):

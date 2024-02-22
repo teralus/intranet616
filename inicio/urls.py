@@ -1,6 +1,6 @@
 from django.urls import path
 from inicio import views
-from inicio.views import ServicesListView, ServiceDetailView, IncidenceListView, IncidenceDetailView
+from .views import ServicesListView, ServiceDetailView, IncidenceListView, IncidenceDetailView
 
 
 inicio = 'inicio'
