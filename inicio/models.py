@@ -5,10 +5,11 @@ class ServiceStatus(models.Model):
     description = models.TextField(verbose_name="Descripción")
     
     def __str__(self):
-        return self.description
+        return {self.name}, {self.description}
     
 
 class Service(models.Model):
+    name = models.CharField(max_length=50)
     description = models.TextField(verbose_name="Descripción")
     status=models.ForeignKey("ServiceStatus", on_delete=models.PROTECT )
     
@@ -22,7 +23,7 @@ class Incidence(models.Model):
     service = models.ForeignKey("Service", on_delete=models.PROTECT)
     
     def __str__(self):
-        return {self.date}, {self.resume}, {self.duration}
+        return  {self.service.name}, {self.resume}
     
     
     
