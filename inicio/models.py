@@ -2,18 +2,18 @@ from django.db import models
 
 
 class ServiceStatus(models.Model):
-    description = models.TextField(verbose_name="Descripción")
+    description = models.CharField(max_length=50, verbose_name="Descripción")
     
     def __str__(self):
         return self.description
     
 
 class Service(models.Model):
-    description = models.TextField(verbose_name="Descripción")
+    name = models.CharField(max_length=50)
     status=models.ForeignKey("ServiceStatus", on_delete=models.PROTECT )
     
     def __str__(self):
-        return {self.description}, {self.status}
+        return self.name
     
     
 class Incidence(models.Model):
@@ -22,7 +22,7 @@ class Incidence(models.Model):
     service = models.ForeignKey("Service", on_delete=models.PROTECT)
     
     def __str__(self):
-        return {self.date}, {self.resume}, {self.duration}
+        return  self.resume
     
     
     
