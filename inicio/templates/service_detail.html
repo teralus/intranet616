@@ -7,11 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios Municipalidad de Machalí</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/node_modules/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">   
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" type="text/css" href="{% static 'inicio/style.css' %}">
-  
-
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -26,67 +23,46 @@
             </div>
         </div>
     </div>
-
-
     <div class="container">
         <img src="https://machali.cl/wp-content/uploads/2023/11/MUNICIPALIDAD-DE-MACHALI.svg" alt="Municipalidad de Machalí" style="width: 166px; height: 100px; float: left; margin-right: 12px; margin-bottom: 20px;">
     </div>
     <div>
     <div>
-          <h1 style="font-size:38px" > Estado de los servicios  </h1>
-          <h5>Ilustre Municipalidad de Machalí.</h5>
-        </div>
-      </div>
-
-<div class="container">
-    <h2>Historial de Incidencias </h2> 
-    <div class="alert alert-success" role="alert">
-        <h3 class="alert-heading">No existen incidencias reportadas  </h3>
-        <p>¡Todos los servicios se encuentran sin reportes! <i class="bi bi-check-circle"></i></p>
-        <hr>
-        <p class="mb-0">Unidad informática.</p>
+        <h1 style="font-size:38px" > Estado de los servicios </h1>
+        <h5>Ilustre Municipalidad de Machalí.</h5>
+    </div>
     </div>
 
-    <table>
-        <thead>
+    <div class="container">
+        <h2>Información de los servicios </h2> 
+        <table> 
+          <thead>
             <tr>
-                <th>SERVICIO </th>
-                <th>RESUMEN</th>
-                <th>FECHA</th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <tr> 
-                <td> <i class="bi bi-chat-right-text"></i> Freshdesk</td>
-                <td> <p>La plataforma interna se encuentra activa.</p></td>
-                <td> 2024-02-22   </td>
-            </tr> 
+              <th>Reportes {{ service }} </th>
+              <th>Fecha </th>
 
-            <tr>
-                <td> <i class="bi bi-printer-fill"></i> Plóter</td>
-                <td> <p>La impresión no está funcionando, escáner funcionando.</p> </td>
-                <td> 19-01-2024  </td>
-            </tr>
 
-            <tr> 
-                <td> <i class="bi bi-telephone"></i>  Línea Telefónica</td>
-                <td><p> Mantención central telefónica.</p></td>
-                <td> 2024-02-22 - 16:30   </td>
-            </tr>   
-            
-            
-            <tr> 
-                <td><i class="bi bi-printer"></i> Impresoras</td>
-                <td><p>Cambio de Tóner para Kyocera ECOSYS M3655idn.</p>  </td>
-                <td> 2024-02-22 - 12:30  </td>
             </tr>
+          </thead>
+        <tbody>  
+        {% for incidence in incidence_data %}
+        <tr>    
+        <td>{{incidence}}</td>
+        
+        <td>{{incidence.date}}</td>  
+    </tr>
+    {% endfor %}
+
+
         </tbody>
-    </table>
-</div>
+
+
+        </table>
+    </div>
+
 
     <div class="container"  
-        id="ultima-actualizacion">Última actualización: 2024-02-23 09:19
+        id="ultima-actualizacion">Última actualización: 2024-02-23 11:01
     </div>
 
     <div class="container" 
@@ -113,4 +89,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+</html>
 </html>
