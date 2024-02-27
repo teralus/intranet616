@@ -3,12 +3,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios Municipalidad de Machalí</title>
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'inicio/style.css' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  
+  
 </head>
 
 <body>
@@ -23,71 +27,76 @@
             </div>
         </div>
     </div>
+
+
     <div class="container">
         <img src="https://machali.cl/wp-content/uploads/2023/11/MUNICIPALIDAD-DE-MACHALI.svg" alt="Municipalidad de Machalí" style="width: 166px; height: 100px; float: left; margin-right: 12px; margin-bottom: 20px;">
     </div>
     <div>
     <div>
-        <h1 style="font-size:38px" > Estado de los servicios </h1>
-        <h5>Ilustre Municipalidad de Machalí.</h5>
-    </div>
-    </div>
+          <h1 style="font-size:38px" > Estado de los servicios </h1>
+          <h5>Ilustre Municipalidad de Machalí.</h5>
+        </div>
+      </div>
+
+
 
     <div class="container">
         <h2>Información de los servicios </h2> 
         <table> 
           <thead>
             <tr>
-              <th>Reportes {{ service }} </th>
-              <th>Fecha </th>
-
-
+              <th>SERVICIOS </th>
+              <th>ESTADO</th>
+              <th>MÁS INFORMACIÓN</th>
             </tr>
           </thead>
-        <tbody>  
-        {% for incidence in incidence_data %}
-        <tr>    
-        <td>{{incidence}}</td>
-        
-        <td>{{incidence.date}}</td>  
-    </tr>
-    {% endfor %}
+        <tbody>
 
+          {% for service in service_list %}
+          <tr> 
+          <td>{{ service }} </td>
+          <td> {{service.status}}</td>
 
+        <td style="text-align: center;">
+          <a href="{% url 'service' service.id %}" class="btn btn-link" tabindex="-1" role="button" aria-disabled="true">
+            <i class="bi bi-info-circle"></i>
+          </a>
+        </td>
+          </tr>
+          {% endfor %}
         </tbody>
-
-
         </table>
     </div>
 
 
-    <div class="container"  
-        id="ultima-actualizacion">Última actualización: 2024-02-23 11:01
-    </div>
 
-    <div class="container" 
+
+      <div class="container"
+      id="ultima-actualizacion">Última actualización: 2024-02-23 09:19</div>
+      
+  <div class="container" 
         data-id="0fdf4fb" 
         data-element_type="container" 
         data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;container_type&quot;:&quot;flex&quot;}" 
         data-core-v316-plus="true">
-    <div class="elementor-element elementor-element-4f5dccd elementor-widget elementor-widget-image" 
+  <div class="elementor-element elementor-element-4f5dccd elementor-widget elementor-widget-image" 
         data-id="4f5dccd" 
         data-element_type="widget" 
         data-widget_type="image.default">
-   <div class="elementor-widget-container">
-    <img decoding="async" 
-         width="1100" 
-         height="190" 
-         src="https://machali.cl/wp-content/uploads/2023/11/FRANJA-COLORES-MACHALI.svg" 
-         class="attachment-large size-large wp-image-30" 
-        alt="" />
-   </div>
-   </div>
-   </div>  
-
+  <div class="elementor-widget-container">
+      <img decoding="async" 
+           width="1100" 
+           height="190" 
+           src="https://machali.cl/wp-content/uploads/2023/11/FRANJA-COLORES-MACHALI.svg" 
+           class="attachment-large size-large wp-image-30" 
+           alt="" />
+  </div>
+  </div>
+  </div>
+ 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-</html>
 </html>
