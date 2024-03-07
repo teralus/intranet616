@@ -3,69 +3,74 @@
 
 {% block content %} 
 
-
-<div class="container">
-      <div class="alert alert-success" role="alert">
-        <h4 class="alert-heading">No hay reportes nuevos.</h4>
-        <p>No existen incidencias a reportar por el momento.<i class="bi bi-check2-circle"></i></p>
-        <hr>
-        <p class="mb-0">Unidad Informática.</p>
-      </div>
-</div>
-
-
-<div class="container">
-    <h2>Historial Incidencias </h2> 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Incidencias</th>
-                <th>Fecha</th>
-                <th>Servicio</th>
-                <th>Detalles</th>
-    
-            </tr>
-        </thead>
-        <tbody>
-            {% for incidence in incidence_list %}
-                <tr>
-                    <td>{{ incidence }}</td>
-                    <td>{{ incidence.date }}</td>
-                    <td> {{incidence.service}}</td>
-                    <td>
-                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#incidentModal{{ incidence.id }}">
-                            Ver detalles
-                        </button>
-                        <div class="modal fade" id="incidentModal{{ incidence.id }}" tabindex="-1" role="dialog" aria-labelledby="incidentModalLabel{{ incidence.id }}" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="incidentModalLabel{{ incidence.id }}">Detalles de la incidencia</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <p>Incidencia: {{ incidence }}</p>
-                                        <p>Fecha de la incidencia: {{ incidence.date }}</p>
-                                        <h5>Servicio asociado:</h5>
-                                        {% if incidence.service %}
-                                            <p>{{ incidence.service }}</p>
-                                        {% else %}
-                                            <p>No hay información del servicio asociado.</p>
-                                        {% endif %}
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+<div class="row">
+    <div class="col">
+        <div class="container">
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">No hay reportes nuevos.</h4>
+                <p>No existen incidencias a reportar por el momento.<i class="bi bi-check2-circle"></i></p>
+                <hr>
+                <p class="mb-0">Unidad Informática.</p>
+            </div>
+        </div>
+        
+        
+        <div class="container">
+            <h2>Historial Incidencias </h2> 
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Servicio</th>
+                        <th>Fecha</th>
+                        <th>Detalles</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for incidence in incidence_list %}
+                    <tr>
+                        <td>{{ incidence.service }}</td>
+                        <td>{{ incidence.date }}</td>
+                        <td>
+                            <button type="button" class="btn btn-info" onclick="openModal('{{ incidence.id }}')">Ver detalles</button>
+                            <div class="modal fade" id="incidentModal{{ incidence.id }}" tabindex="-1" role="dialog" aria-labelledby="incidentModalLabel{{ incidence.id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="incidentModalLabel{{ incidence.id }}">Detalles de la incidencia</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Incidencia: {{ incidence }}</p>
+                                            <p>Fecha de la incidencia: {{ incidence.date }}</p>
+                                            <h5>Servicio asociado:</h5>
+                                            {% if incidence.service %}
+                                                <p>
+                                                    <h4 style="text-align: center;">{{ incidence.service }}</h4></p>
+                                            {% else %}
+                                                <p>No hay información del servicio asociado.</p>
+                                            {% endif %}
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+                        </td>
+                    </tr>
+                    
+                    <script>
+                        function openModal(incidentId) {
+                            var myModal = new bootstrap.Modal(document.getElementById('incidentModal' + incidentId));
+                            myModal.show();
+                        }
+                    </script>
+                    
+    {% endfor %}
+                </tbody>
+            </table>
+        </div>
 
+    </div>
+</div>
 {% endblock %}

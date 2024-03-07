@@ -3,30 +3,28 @@
 
 {% block content %} 
 
-    <div class="container">
+  <div class="container">
+    <div class="row"> 
+      <div class="col">
         <h2>Información de las incidencias del servicio {{service}} </h2> 
-        <table> 
-          <thead>
-            <tr>
-              <th>Reportes {{ service }} </th>
-              <th>Fecha </th>
-
-
-            </tr>
-          </thead>
-        <tbody>  
-        {% for incidence in incidence_data %}
-        <tr>    
-        <td>{{incidence}}</td>
-        
-        <td>{{incidence.date}}</td>  
-        </tr>
+          <table class="table"> 
+            <thead>
+                <tr>
+                  <th>Reportes {{ service }} </th>
+                  <th>Fecha </th>
+                </tr>
+            </thead>
+            <tbody>  
+    {% for incidence in incidence_data %}
+                <tr>    
+                  <td>{{incidence}}</td>
+                  <td>{{incidence.date}}</td>  
+                </tr>
     {% endfor %}
-
-
-        </tbody>
-
-
+            </tbody>
         </table>
+
+      </div>
     </div>
+  </div>
 {% endblock %}

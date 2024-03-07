@@ -5,42 +5,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}Servicios Municipalidad de Machalí{% endblock %}</title>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <title> {% block title %} Servicios Municipalidad de Machalí {% endblock %} </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css  " rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'inicio/style.css' %}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
- 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" /> 
 </head>
-
-<body>
-
-    <div class="elementor-element elementor-element-c3612ce e-flex e-con-boxed e-con e-parent" data-id="c3612ce" data-element_type="container" data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;container_type&quot;:&quot;flex&quot;,&quot;content_width&quot;:&quot;boxed&quot;}" data-core-v316-plus="true">
-        <div class="e-con-inner">
-            <div class="elementor-element elementor-element-015a787 e-con-full e-flex elementor-invisible e-con e-child" data-id="015a787" data-element_type="container" data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;animation&quot;:&quot;fadeInUp&quot;,&quot;container_type&quot;:&quot;flex&quot;}">
-                <div class="elementor-element elementor-element-e7cb684 elementor-widget elementor-widget-image" data-id="e7cb684" data-element_type="widget" data-widget_type="image.default">
-                    <div class="elementor-widget-container">
-                        <img decoding="async" width="177" height="22" src="https://machali.cl/wp-content/uploads/2023/11/COLORES-MAVHALI-1.svg" class="attachment-large size-large wp-image-16" alt="" />
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col" style="background-color: #008AAD; width: 100px; height: 66px;"></div>
+          <div class="col" style="background-color: #EF8903; width: 100px; height: 66px;"></div>
+          <div class="col" style="background-color: #D60037; width: 100px; height: 66px;"></div>
+      </div>
     </div>
 
 
     <div class="container">
-      <a href=>
-          <img src="https://machali.cl/wp-content/uploads/2023/11/MUNICIPALIDAD-DE-MACHALI.svg" alt="Municipalidad de Machalí" style="width: 166px; height: 100px; float: left; margin-right: 12px; margin-bottom: 20px;">
-      </a>
-  </div>
-  
-    <div>
-    <div>
-          <h1 style="font-size:38px" > Estado de los servicios <span class="material-symbols-outlined" style="font-size: 36px; font-weight: bold; vertical-align: middle;">settings</span>
-          </h1>
+      <div class="row mt-3">
+        <div class="col-lg-2 col-sm-12">
+          <a href=><img src="https://machali.cl/wp-content/uploads/2023/11/MUNICIPALIDAD-DE-MACHALI.svg" alt="Municipalidad de Machalí" style="width: 166px; height: 100px; float: left; margin-right: 12px; margin-bottom: 20px;"></a>
+        </div>
+        <div class="col-lg-10 col-sm-12">
+          <h1 style="font-size:38px" > Estado de los servicios <span class="material-symbols-outlined" style="font-size: 36px; font-weight: bold; vertical-align: middle;">settings</span></h1>
           <h5>Ilustre Municipalidad de Machalí.</h5>
         </div>
       </div>
+    </div>
 
  {% block content %} 
  
@@ -48,32 +38,25 @@
  {% endblock %}
  
  
-      <div class="container"
-      id="ultima-actualizacion">Última actualización: 2024-02-23 09:19</div>
+    <div class="container" id="ultima-actualizacion">
+      <div class="row">
+        <div class="col">
+          Última actualización: 2024-03-06 09:19 
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          <div class="col" style="background-color: #008AAD; width: 100px; height: 16px;"></div>
+          <div class="col" style="background-color: #EF8903; width: 100px; height: 16px;"></div>
+          <div class="col" style="background-color: #D60037; width: 100px; height: 16px;"></div>
+      </div>
+    </div>
       
-  <div class="container" 
-        data-id="0fdf4fb" 
-        data-element_type="container" 
-        data-settings="{&quot;content_width&quot;:&quot;full&quot;,&quot;container_type&quot;:&quot;flex&quot;}" 
-        data-core-v316-plus="true">
-  <div class="elementor-element elementor-element-4f5dccd elementor-widget elementor-widget-image" 
-        data-id="4f5dccd" 
-        data-element_type="widget" 
-        data-widget_type="image.default">
-  <div class="elementor-widget-container">
-      <img decoding="async" 
-           width="1100" 
-           height="190" 
-           src="https://machali.cl/wp-content/uploads/2023/11/FRANJA-COLORES-MACHALI.svg" 
-           class="attachment-large size-large wp-image-30" 
-           alt="" />
-  </div>
-  </div>
-  </div> 
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
