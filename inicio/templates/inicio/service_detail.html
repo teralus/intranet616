@@ -1,0 +1,30 @@
+{% extends 'inicio/base.html'%}
+{% load static %}
+
+{% block content %} 
+
+  <div class="container">
+    <div class="row"> 
+      <div class="col">
+        <h2>Información de las incidencias del servicio {{service}} </h2> 
+          <table class="table"> 
+            <thead>
+                <tr>
+                  <th>Reportes {{ service }} </th>
+                  <th>Fecha </th>
+                </tr>
+            </thead>
+            <tbody>  
+    {% for incidence in incidence_data %}
+                <tr>    
+                  <td>{{incidence}}</td>
+                  <td>{{incidence.date}}</td>  
+                </tr>
+    {% endfor %}
+            </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}
