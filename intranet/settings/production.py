@@ -8,7 +8,8 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '')
 ALLOWED_HOSTS = [
     '0.0.0.0',
     'localhost',
-    'intranet.machali.int'
+    'machali.int',
+    '.intranet.machali.int'
     ]  # dominio o IP 
 
 DATABASES = {
@@ -17,7 +18,7 @@ DATABASES = {
         'NAME': os.environ.get('DB_NAME', ''),
         'USER': os.environ.get('DB_USER', ''),
         'PASSWORD': os.environ.get('DB_PASS', ''),
-        'HOST': 'localhost',
+        'HOST': os.environ.get('DB_HOST', ''),
         'PORT': '5432',
     }
 }
@@ -37,3 +38,4 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
