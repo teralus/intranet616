@@ -9,7 +9,8 @@ ALLOWED_HOSTS = [
     '0.0.0.0',
     'localhost',
     'machali.int',
-    '.intranet.machali.int'
+    '.intranet.machali.int',
+    '192.168.11.31'
     ]  # dominio o IP 
 
 DATABASES = {
