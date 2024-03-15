@@ -38,4 +38,5 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_URL= 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '/var/www/intranet/static')
